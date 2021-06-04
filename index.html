@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento de Alumnos Certus</title>
+</head>
+<body>
+    <h1>Mantenimiento de Alumnos</h1>
+    <br>
+    Codigo: <input type="text" id="codigo" maxlength="8" onkeypress="return numeros(event)">
+    <br>
+    Nombres: <input type="text" id="nombre" onkeypress="return sololetras(event)">
+    <br>
+    Apellidos: <input type="text" id="apellido" onkeypress="return sololetras(event)">
+    <br>
+    Distrito: <input type="text" id="distrito" onkeypress="return sololetras(event)">
+    <br>
+    Direccion: <input type="text" id="direccion">
+    <br>
+    Correo: <input type="text" id="correo" onkeypress="return correo(event)">
+    <br>
+    <input type="button" value="Ingresar" id="ingresar" onclick="ingresar()">
+
+    <script>
+        function ingresar(){
+
+            var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+
+            var codigo=document.getElementById('codigo').value;
+            var nombres=document.getElementById('nombre').value;
+            alert(codigo+ ' '+nombres);
+            console.log(codigo, ' ' + nombres);
+
+            var arreglo =[1,2,3];
+            var texto=["pepito",'judas','juana'];
+            var arreglo2=['juanita',18,2500];
+
+            var resultado=arreglo[1] + ' ' + arreglo[2].toString();
+            
+            alert(resultado);
+            console.log(arreglo[1], arreglo[2]);
+            console.log(texto[0],texto[1]);
+            console.log(arreglo2[0], arreglo2[2]);
+        }
+
+        function correo(){
+
+            var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+            var correo=document.getElementById("correo").value;
+        }
+
+        function sololetras(e){
+                     if (event.keyCode >45 && event.keyCode  <58) event.returnValue = false;
+         } 
+
+        function numeros(e){
+                     if (event.keyCode >32 && event.keyCode  <48) event.returnValue = false;
+                     if (event.keyCode >57 && event.keyCode  <255) event.returnValue = false;
+         } 
+
+
+    </script>
+</body>
+</html>
